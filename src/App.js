@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./style.scss"
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
+import Layout from "./Layout/Layout";
+import Home from "./Componenets/HomePage/Home";
+import Catalog from "./Componenets/CatalogPage/Catalog";
+import LikeSection from "./Componenets/LikePage/LikeSection";
+import Register from "./Pages/Register/Register";
+import Login from "./Pages/Login/Login";
+import NotFound from "./Componenets/NotFound/NotFound";
+import {useSelector} from "react-redux";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const {user} = useSelector((store) => store.user)
+    const router = createBrowserRouter(
+        createRoutesFromElements(
+            <Route path={'/'} element={<Layout/>}>
+                {/*{*/}
+                {/*    !user.register.length ?*/}
+                {/*        <>*/}
+                            <Route path={'/login'} element={<Login/>}/>
+                            <Route path={'/register'} element={<Register/>}/>
+                        {/*</>*/}
+                        {/*:*/}
+                        {/*<>*/}
+                            <Route path={'/'} element={<Home/>}/>
+                            <Route path={'/catalog'} element={<Catalog/>}/>
+                            <Route path={'/like'} element={<LikeSection/>}/>
+                            <Route path={'*'} element={<NotFound/>}/>
+                {/*        </>*/}
+
+                {/*}*/}
+
+            </Route>
+        )
+    )
+    return (
+        <div className="App">
+            <RouterProvider router={router}/>
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,23 @@
+@import "src/Mixins/mixin";
+.catalog{
+  &__content{
+    display: flex;
+    column-gap:25px;
+  }
+
+  &__title{
+    @include text(500,25px,100%,rgba(15, 48, 63, 1));
+    @include avenir;
+    margin-left: 30px;
+    margin-bottom: 45px;
+  }
+  &__right{
+    width:953px;
+  }
+  &__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: 30px;
+  }
+}

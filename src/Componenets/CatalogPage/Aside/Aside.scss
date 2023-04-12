@@ -1,0 +1,59 @@
+@import "src/Mixins/mixin";
+.aside{
+  width: 220px;
+  &__wrapper{
+    display: flex;
+    column-gap: 17px;
+    border-bottom:2px solid #EAE9E8;
+    justify-content: center;
+    width: 220px;
+    padding-bottom: 10px;
+    margin-bottom:10px;
+  }
+  &__gender{
+    position:relative;
+    @include text(400,19px,19px,#0F303F);
+    @include avenir;
+    cursor: pointer;
+    &:hover{
+      color: #E64926;
+    }
+    &:hover::before{
+      content: '';
+      position: absolute;
+      bottom:-12px;
+      width:100px;
+      height: 2px;
+      background: #E64926;
+    }
+    &.active{
+      color: #E64926;
+    }
+
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+   }
+  &__clothes{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    position: relative;
+  }
+  &__open{
+    width: 10px;
+    height: 3px;
+    background: #E64926;
+    position: absolute;
+    right: 0;
+    top:-25px;
+  }
+  &__el{
+    @include text(400,14px,170%,#0F303F);
+    @include avenir;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,35 @@
+@import "src/Mixins/mixin";
+.arrival{
+  display: flex;
+  background:  #CEC6C4;
+  align-items: center;
+  column-gap: 100px;
+  &__img{
+    background: #ffffff;
+    padding: 110px;
+  }
+  &__title{
+   @include text(500,90px,102%,#ffffff);
+    @include cormorant;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    width: 50px;
+  }
+  &__txt{
+    @include text(400,14px,19px,#ffffff);
+    @include cormorant;
+    margin-bottom: 34px;
+    width: 468px;
+  }
+  &__look{
+    @include text(400,16px,22px,#ffffff);
+    @include cormorant;
+    text-transform: uppercase;
+  }
+  &__inner{
+    position:absolute;
+    bottom:-75%;
+    left:50px;
+  }
+
+}

@@ -1,0 +1,24 @@
+@import "src/Mixins/mixin";
+.item {
+  &__item {
+    padding: 11px 0;
+    border-bottom: 1px solid #EAE9E8;
+    position: relative;
+    cursor: pointer;
+    @include text(800, 14px, 19px, #0F303F);
+    text-transform: uppercase;
+    &:hover {
+      color: #E64926;
+    }
+    &.active {
+      color: #E64926;
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}

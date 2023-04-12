@@ -1,0 +1,20 @@
+@import "src/Mixins/mixin";
+.brand{
+  margin-bottom: 23px;
+  &__list{
+    display: flex;
+    column-gap: 20px;
+  }
+  &__item{
+    list-style-type: circle;
+    @include text(400,10px,14px,#0F303F);
+    @include avenir;
+    cursor: pointer;
+    &.active{
+      color: #E64926;
+    }
+    &_el{
+      width: 45px;
+    }
+  }
+}

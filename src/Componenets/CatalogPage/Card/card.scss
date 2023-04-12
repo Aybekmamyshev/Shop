@@ -1,0 +1,47 @@
+@import "src/Mixins/mixin";
+.card{
+   text-align: center;
+  position: relative;
+  width: 270px;
+  height: 425px;
+  border: 2px solid #00000020;
+  border-radius: 10px;
+  &__pic{
+    margin-bottom: 15px;
+    height: 325px;
+
+  }
+  &__title{
+    @include text(500,18px,25px, #0F303F);
+    @include avenir;
+    margin-bottom: 2px;
+  }
+  &__subtitle{
+    @include text(300,16px,22px, #0F303F);
+    @include avenir;
+    margin-bottom: 2px;
+  }
+  &__price{
+    @include text(700,14px,20px, #0F303F);
+    @include cormorant;
+    margin-bottom: 50px;
+  }
+  &__heart{
+    background: #ffffff;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    bottom:105px;
+    &.active{
+      background: #E6492601;
+    }
+  }
+  &__image{
+    object-fit: cover;
+   }
+}

@@ -1,0 +1,32 @@
+@import "src/Mixins/mixin";
+.women{
+  height: 500px;
+  width: 100%;
+  margin:0 0 119px 0;
+
+  .container{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height: 500px;
+   }
+  &__block{
+    text-align: center;
+  }
+  &__title{
+    @include text(500,20px,24px, #EAE9E8);
+    @include cormorant;
+    text-transform: uppercase;
+  }
+  &__subtitle{
+    @include text(800,27px,24px, #EAE9E8);
+    @include cormorant;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+  }
+  &__txt{
+    @include text(400,16px,22px, #EAE9E8);
+    @include cormorant;
+    text-transform: uppercase;
+  }
+}

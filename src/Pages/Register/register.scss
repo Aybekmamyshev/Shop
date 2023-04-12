@@ -1,0 +1,65 @@
+@import "src/Mixins/mixin";
+.register{
+  display: flex;
+  .container{
+     padding: 45px 0 119px 0;
+  }
+  &__title{
+    @include text(500,25px,34px,#0F303F);
+    @include avenir;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+&__wrapper{
+  display:flex;
+  column-gap: 20px;
+
+}
+  &__block{
+    display: flex;
+    flex-direction: column;
+  }
+  &__box{
+    display: flex;
+    flex-direction: column;
+  }
+  &__input{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #254A5A;
+    padding-bottom: 5px;
+    @include text(400,14px,170%, #B7C1C5);
+    width: 250px;
+    margin-bottom: 20px;
+  }
+  &__span{
+    @include text(500,16px,12px,#0F303F);
+    @include avenir;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  &__inner{
+    display:flex;
+    column-gap: 30px;
+    align-items: center;
+    margin-top: 20px;
+  }
+  &__btn{
+    @include text(800,16px,22px,#EAE9E8);
+    @include avenir;
+    background:#0F303F;
+    padding: 15px 18px;
+  }
+  &__txt{
+    @include text(500,12px,16px, #0F303F);
+   @include avenir;
+  }
+  &__get{
+    color: rgba(230, 73, 38, 1);
+  }
+  &__label{
+    display: flex;
+    flex-direction: column;
+  }
+}
